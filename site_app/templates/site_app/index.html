@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}3С-Сервис{% endblock %}
+
+{% block content %}
+<section class="hero_section">
+    <div class="hero_content">
+        <h1>Добро пожаловать в 3С-Сервис</h1>
+        <p>Ремонт и обслуживание техники с высоким качеством и скоростью.</p>
+    </div>
+</section>
+
+<section class="features_section">
+    <h2>Наши Услуги</h2>
+    <div class="features_grid">
+        {% for card in cards %}
+        <div class="feature_item">
+            <h3>{{ card.title }}</h3>
+            <div class="feature_content">
+                <img src="{{ card.image.url }}" alt="{{ card.title }}" class="feature_image">
+                <p>{{ card.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section id="about" class="about_section">
+    <h2>О нас</h2>
+    <div class="about_content">
+        <p>3С-Сервис — это команда профессионалов, готовых быстро и качественно решить любые задачи, связанные с
+            ремонтом, обслуживанием и настройкой техники. Мы ценим ваше время и гарантируем высокий уровень сервиса для
+            всех наших клиентов.</p>
+    </div>
+</section>
+
+<section id="contacts" class="contact_section">
+    <h2>Контакты</h2>
+    <div class="contact_content">
+        <p><strong>Адрес:</strong> г. Москва, ул. Примерная, 123</p>
+        <p><strong>Телефон:</strong> +7 (123) 456-78-90</p>
+        <p><strong>Email:</strong> info@3cservice.com</p>
+        <p>Свяжитесь с нами, и мы с радостью ответим на все ваши вопросы!</p>
+    </div>
+</section>
+{% endblock %}
